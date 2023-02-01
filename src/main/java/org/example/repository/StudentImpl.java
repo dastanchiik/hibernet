@@ -5,6 +5,8 @@ import org.example.model.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.util.List;
+
 public class StudentImpl implements PersonRepo {
     private SessionFactory ses = Util.getSessionFactory();
 
@@ -21,6 +23,12 @@ public class StudentImpl implements PersonRepo {
         try (Session session = ses.openSession()) {
             return session.get(Student.class, id);
         }
+    }
+
+    @Override
+    public List getAll() {
+
+        return null;
     }
 
     @Override
